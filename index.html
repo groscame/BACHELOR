@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    借鉴了C语言的基本语法
+    Java的数据类型和内存管理
+    scheme 将函数提升到第一等公民的地位
+    self使用基于原型prototype的继承机制
+    DOM js操作页面上的元素api
+    body结束标签之前
+    浮点数最高精度只有17位小数 不能精确表示小数只能去近似值
+    字符串必须写在同一行  +''
+    优先字符串连接 后考虑数字运算
+    布尔值比较 另一个转化为一个数字 数值比较
+    逗号运算符返回最后一个值
+    !!Boolean()
+    所有的参数都会放到arguments
+    对象是js中一组属性和方法的无序集 一般针对一功能载体的描述
+    t.age=t["age"]
+    程序一般对应一个进程 进程之间相互隔离 不影响 线程是执行代码的最小单位 所有代码线程执行
+    object是最常用的引用类型 js中的复杂类型 一种数据结构
+    在线程内存中模型 栈内存 简单类型 堆内存
+    任何使用var声明的属性不能从全局捉用于或函数捉用于中删除
+    除了在全局作用域中的函数不能被删除 object中的函数是可以被delete删除
+    检测属性 属性in变量对象 var i in t会把继承原型的属性也会遍历到hasownproperty过滤
+    每个对象都有自己的私有原型对象除了null
+    对象的原型可以通过它的构造函数.prototype获得
+    m.__proto__===Object.prototype
+    m.__proto__.constructor===Object
+    object原型属性和方法
+    tostring tolocalstring转化为本地化对应的字符串valueof获取它的值hasownproperty判断属性是否是自己创建添加的
+    求幂指数**
+    默认sort升序排列
+    函数式编程 函数本身也是一个对象 也是可以作为参数传递
+    针对布尔数值字符串js都提供了对应的包装类型 在三种变量读取操作 临时包装对象 访问方法 立即销毁
+    前两个是引用类型 Boolean Number方法 String
+    var t=new Boolean(false);
+    t.toString(进制);tolocalstring valueof tofixed接受参数限定小数位数有bugtoexponential(保留小数位数)按指数形式输出字符串toprecision接受一个输出数据总位数参数
+会自动根据调用前两个表示
+var a=new String("123)对字符串的所有操作都会返回一个新的字符串 原字符串不可变
+charAt(index)获取某个索引位置的字符 把字符串当作字符数组 charCodeAt(index) 获取位置的编码
+stringValue[index]类似数组的使用concat连接字符串 slice类似数组 字符串切片
+replace substring substr trim() indexOf
+Date是js中处理时间的对象 世界协调时间UTC
+全局对象 兜底对象
+值类型 基本类型 简单类型 数值 布尔值 null undefined
+引用类型 复杂类型 对象 数组 函数
+变量对象存放变量名字和值
+堆内存存放js的数据和方法
+</body>
+</html>
