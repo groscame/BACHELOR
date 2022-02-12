@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!-- !声明 doctype不区分大小写 -->
+<!-- <!DOCTYPE> 标记位于文档的最前面，用于向浏览器说明当前文档使用哪种 HTML或XHTML 标准规范 主要用于浏览器解析文档标签的依据 -->
+<!-- <!DOCTYPE>标记和浏览器的兼容性相关，删除<!DOCTYPE>，就是把如何展示 HTML 页面的权利交给浏览器 -->
+<html lang="zh-CN">
+<!-- <html lang="en"> -->
+<!-- 语言 -->
+
+<head>
+    <!-- Meta:元,主要用来完成对应的设置 -->
+    <meta charset="UTF-8">
+    <!-- <meta charset="utf-8">不区分大小写 gb2312简单中文 GBK包含BIG5繁体中文-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 这里表示将ie转化为edge 优先使用edge chrome-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 移动端开发设置 -->
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="Pragma" content="no-cache">
+    <!-- 禁用本地缓存 -->
+    <!-- all:文件将被检索 页面上的连接可以被查询 none:不检索 不查询 index文件将被检索 follow 页面上的连接可以被查询 noindex nofollow -->
+    <meta http-equiv="refresh" content="0; url=http://example.com">
+    <!-- content秒搜索引擎能够自动检查 也很容易被引擎视作误导而受到惩罚 -->
+    <!--	提供元素额外信息  提示用于搜索引擎优化-->
+    <meta name="keywords" content="标记不应超过874个字符">
+    <meta name="description" content="不超过150字符且能准确反应网页内容的描述标签">
+
+    <title>标题至关重要对SEOsearch engine optimization直接影响</title>
+    <!--link是html提供的标签 引入外部文件-->
+    <!-- 指示css样式 cascading style sheets 外部样式表
+        rel="stylesheet"外部样式表 外部引用资源 
+        Type="text/css"引入文档类型
+    href hypertext reference 指向跳转的地址
+URL uniform resource locator
+协议规定 scheme://host.domain:port/path/filename  scheme host path query hash
+因特网服务类型 定义域主机http的默认主机是www 因特网域名 http默认主机端口是80 服务器路径 省略 必须位于根目录 文档/资源名称
+全为ASCII码 域名会通过DNS转化为ip地址-->
+    <link rel="stylesheet" href=".\js入门code\css">
+    <!-- dns预解析 -->
+    <link rel="dns-prefetch" href="http://mimg.127net">
+    <!-- rel指定当前HTML文件与css文件的关系是样式表 图标样式 -->
+    <link rel="shortcut icon" href="https://i2.hdslb.com/bfs/face/4add3acfc930fcd07d06ea5e10a3a377314141c2.jpg@.webp"
+        type="iamge/webp">
+    <!-- rel="shortcut icon" 引入外部标签  href="https://i2.hdslb.com/jpg@.webp" 引入地址type="iamge/webp"引入类型> -->
+    <link href="css/重置版.css" rel="stylesheet" type="text/css">
+    <link rel="type/js入门code" href="js入门code/easy.html">
+    <link rel="type/js高级code" href="js高级code/00.html">
+    <srcipt src="script.js" defer></srcipt>
+    <!-- 外部的js脚本 加上defer则最后加载这个js 异步加载-->
+    <script type="text/javascript">
+        // 嵌入的js脚本，一般会写在body之前。
+        alert("demo-alert");
+    </script>
+    <!-- 内部样式表 style *选择器穿透力很强 优先级高于继承样式权重为0覆盖-->
+    <style type="text/css">
+        /* 字相关继承盒子不继承 */
+        /* body{等于下方*/
+        :root {
+            min-width: 700px;
+            /* 过限制出现滚动条 */
+        }
+
+        div p :not(span) {
+            /*		加空格*/
+            cursor: pointer;
+            /* 鼠标转化为点按手势 */
+            font-size: 20px;
+            border: 1px solid pink;
+            white-space: nowrap;
+            /* 禁止换行使用默认宽度和字高 非此则换字种类或空格前截断*/
+            text-transform: uppercase;
+            /* 全字母大写 /\b单词\b/大写首字母 capitalize;*/
+            text-indent: 1em;
+            /* 段落首行用em相对书写 可用缩进px或cm */
+            background: url(./img/sprite_title0615.png) no-repeat 0 -1079px;
+            /*  类class标签 ulli标签 list-style: none;    text-decoration: none;a标签下的下划线*/
+            /*  */
+        }
+
+        ul>li {
+            background-Image: url(./img/sprite_title0615.png);
+            background-image: url(./img/sprite_title0615.png);
+            background-repeat: no-repeat;
+        }
+
+        ::selection {
+            color: crimson;
+            /*		显示被鼠标滑过选中的文本*/
+        }
+
+        a:active {
+            color: aqua;
+            font-size: 50px;
+            font-style: oblique;
+            text-decoration: line-through;
+            text-align: center;
+        }
+
+        input:enabled {
+            color: greenyellow;
+            /* input:disabled { */
+        }
+
+        input:focus {
+            color: blue;
+            /* 输到上面的字体变化 */
+        }
+
+        /* <input type="text"> 给默认enable显示背景色*/
+        /* <input type="text" disabled> */
+        /* 属性选择器 */
+        /* p[class][id] p[class$=content]结尾  ^=开头 ~=包含指定值 =完全为属性名 *=可为单个字母 */
+        /* 伪类选择器 */
+        ul li:first-child {
+            list-style-position: inside;
+            /* list-style-position: outside; */
+            /* list-style-position: inherit; */
+            /* list-style-image: url(img/1.jpg); */
+        }
+
+        table {
+            border-collapse: collapse;
+            /* 表格空隙设置为零 */
+            /* 设置外边框线 */
+            font-size: "82px";
+            font-family: "微软雅黑";
+            font-style: "italic";
+            line-height: "18px";
+            display: table-cell;
+            /* 都在同一排像table一样均分排列就可以设置宽高 */
+            text-decoration: underline;
+        }
+
+        footer::before {
+            /* 伪元素无法选中:before/:after/:first-letter/:first-line可以双冒号 */
+            content: '★';
+            vertical-align: middle;
+            /* 该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐。 */
+        }
+
+        .div1 {
+            overflow: hidden;
+            background-color: lightblue;
+        }
+
+        .div2,
+        .div3,
+        .div4 {
+            float: left;
+            /* display: inline; 无法设置宽高*/
+            /* display: inline-block; 无法浮动*/
+            width: 200px;
+            height: 300px;
+        }
+
+        .div3 {
+            width: 100%;
+            background-color: green;
+        }
+
+        .div2 {
+            background-color: red;
+            margin-left: -100%;
+            /* 向上移动 */
+            /*外边距塌陷
+            margin-right: -100%; 替下方设置向上移动 */
+        }
+
+        .div4 {
+            background-color: blue;
+            /* margin-right: 500px; */
+            margin-left: -200px;
+        }
+
+        /* css命名规范 */
+        /* BEM block-element-modifier 块元素修饰符 head-serach_left */
+        /* OOCSS 样式尽量使用继承公共的要抽取类  位置大小文字背景其他 属性合写 去掉小数前0 为0无单位 缩写#ccc 用类少用id 缩进两个空格多选择器分别放置 */
+    </style>
+</head>
+
+<body>
+    语义化header nav aside article section footer html5shiv.js
+    <!-- js第一种形式：行内的js脚本 点击弹出alert  JavaScript:0什么都不操作-->
+    <h1 onclick="alert('123')">标题标签</h1>
+    <!-- emmet语法  -->
+    <!-- p#p${段落$}*3 -->
+    <!--ul>li{内容$}*4-->
+    <!-- form>select>option -->
+    <!-- article>section>object>embed -->
+    <!--字符编码实体 空格&nbsp;大于&qt;小于&lt;-->
+    <!-- div>span>ul>form>lable+input -->
+    <form action="#" method="get">
+        <!-- post方法输入自身会崩溃 -->
+        <lable>form表单标签是所有标签最核心的标签之一,前后端交互的一个重要标签 所有内容提交服务器 action指定表单数据提交到后台哪个地址处理 不指定默认当前请求地址
+        </lable><input type="text" name="user" autocomplete="on" placeholder="记忆?永久保留">
+        <input href="#" type="submit" value="submit" />
+    </form>
+    <input type="radio" name="sex" />radio单选框 name相同为一类
+    <input type="checkbox" name="face" unchecked />checkbox复选框
+    <h1>HTML5有意思的标签</h1>
+    <br />
+    <b>定义粗体文本 加重标签</b>
+    <br />
+    <strong>定义加重语气</strong>
+    b和strong 除了加粗还有强调作用主要用于seo 便于提取对应的关键字 且都是
+    i和em文字倾斜 i标签添加图标有时候会用 em具有强调作用
+    <br />
+    <em>定义着重文字</em>
+    <br />
+    <i>定义斜体字不推荐</i>
+    <br />
+    <small>定义小号字</small>
+    <br />
+    <sub>定义下标字</sub>
+    <br />
+    <sup>定义上标字</sup>
+    <br />
+    <ins>定义插入字</ins>
+    <br />
+    <del>定义删除字</del>
+    <br />
+    <hr width="80%" height="400px" color="green" />可以设置宽度无法设置高度
+    <!-- <img src="../javascript/self/img/logo.png" alt="" align="top"> -->
+    <img src="../javascript/self/img/logo.png" alt="">
+    <div class="div1">
+        <div class="div3">父元素一定要清楚浮动</div>
+        <div class="div2">三分式定左右布局02</div>
+        <div class="div4">设置前两个固定宽高且浮动第三个盒子百分之百的宽度就可以完美实现左中定右随意
+            利用本身的性质不需要设定position利用的是div人工排序</div>
+    </div>
+    <h1>a标签</h1>
+    <a href="javascript:close();">关闭页面&times;</a>
+    <a href="javascript:void(1);">阻止默认行为js协议不给代码空没有任何影响</a>
+    <a href="javascript:alert('wfwoebwogabio')">dnfdnfdfb</a>
+    <a href="js/01.js" target="_blank">我是谁</a>
+    <a href="#tips">跳转到</a>
+    <!--	blank空白新标签打开-->
+    <a style="border:1px dotted greenyellow">biblibili.com</a>
+    <!-- <div style="width: 200px height: 200px">djsldwrgerfj</div> style属性只能添加一个值但是基本都能添加内联样式表-->
+    <div style="height: 200px">djsldwrgerfj</div>
+    <table border="1" width="680px" height="90px" cellspaceing="100" cellpadding="100">
+        <tr>
+            <th>table标签自带宽高直接设置</th>
+            <td>div是不能这样直接设置宽和高</td>
+        </tr>
+    </table>
+    <label for="sex">性别</label>
+    <select id="sex" multiple size="3">
+        <span name="tips">到name或者是id都行</span>
+        <option value="male">男</option>
+        <option value="nvcx">女</option>
+        <option value="nvcx">?</option>
+    </select>
+    entity实体字符
+    &nbsp;空格 &lt;小于号 大于号 &gt; &amp;
+</body>
+<script defer>
+    //<script type="text/javascript"低版本解析
+    //JavaScript的直接量 数字类型 number 字符串类型 string 对象类型 object
+    // 对象类型的特殊值 空和null
+    // 声明的变量未初始化和赋值或者未经定义的变量是undefined
+    console.log(typeof m);//为undefined不报错
+    // 数值类型
+    0.987; // 小数前面的零可以去掉v0x开头的数字表示十六进制数字 1e3; // 1000  小写和大写e都可以，都表示10的x次方。
+    Number.MAX_VALUE; Number.MIN_VALUE; // 数字的最大值。并不是所有浏览器都只支持到这个值，某些浏览器是可以超过这值的。
+    Math.random(); //可以随机生成一个0-1之间的小数
+    // undefined类型 函数没有返回值的时候，函数执行完成后，默认返回undefined
+    // 1、结果超出了es的数值的表示范围，那么结果就是Infinity
+    // 2、 如果一个操作数是NaN那么结果一定是NaN
+    // 3、 如果是Infinity和Infinity进行相除结果是NaN
+    // 4、 0 / 0 ,0被除，如果是0那么结果是NaN，如果不是0那么结果就是Infinity
+    // 5、 如果Infinity 除以任何数，结果都是 [-]Infinity可能有符号
+    // 自加运算符在前面的时候，先进行自加运算，再参与表达式的运算。
+    // 自加运算符在后面的时候，先进行其他运算，得出结果后 i再重新参与表达式的运算。
+    // 编码规范中，也强调函数开头定义函数内部的变量。
+    (a = 10), function f() { }; f();
+    //3. Javascript的语句
+    window.document.write("window.document.write");
+    window.console.log(window.alert('window.document.title= "欢迎您收看老马的前端系列视频"'));
+    console.log(typeof (function () { document.write('hello') })());//函数一次性执行之后无效了 成为undefined
+    //获取或者是设置 head标签中的title标签的文本内容
+    console.log(document.charset);
+    console.log(document.URL);//必须大写URL 可以获取当前文档的地址也就说默认是全局
+    // 事件冒泡 点击子元素，子元素覆盖的父元素的绑定的点击事件也会被执行。父元素执行后window再执行
+    // 点击了父元素标签的时候，父元素的绑定的点击事件先执行,跟子元素无关,子元素不执行,父元素执行后window再执行
+    //div对象.onclick=function(){行为：匿名函数 这种绑定事件的方式，只能绑定一个方法 alert(this.innerHTML);}
+    // 给window变量绑定单击响应事件 在事件的响应方法中 this 指向当前事件源对象。
+    // window.onclick = function() {};1、不能绑定多个事件处理程序 2、只能在冒泡阶段执行事件响应程序
+    // 第二种绑定事件的方式，可以绑定了两个事件处理程序
+    // 传递3参数，1事件类型字符串onclick不带on 2是事件处理程序3是否在捕获阶段执行事件处理程序 默认true是捕获
+
+    //创建一个Object对象
+    //定义空对象  使用new操作符创建对象 
+    var jbo = new Object();//创建了一个Object对象jbo
+    // var t = Object();  好像没什么大变化  new: 会创建一个对象，然后对象执行Object函数。最后返回一个对象实例
+    // js是一个动态语言，可以随时添加属性和方法
+    // 对象使用自己的属性和方法 使用点的方式 t.age= 19; 使用中括号的方式 t["name"]= "demo2";
+    // 用对象字面量创建对象 也称为使用JSON对象的方式。
+    var obj = {};//属性名:属性值,属性名:属性值,属性名:属性值....最后不能写逗号 属性名可用双引号引起来
+    //typeof检查一个函数对象是 会返回function
+    //创建一个函数对象
+    // 构造函数的方式创建对象
+    var fun = new Function();//var fun = new Function("console.log('hello我是的');");
+    //使用使用new关键字 即为构造函数调用模式
+    //使用构造函数创建一个Dog类型的实例 只要出现new关键字 函数即为构造函数使用
+    var d = new Dog('lddd')
+    //函数参数的值类型和引用类型复制与传递 
+    //在函数中命名形参赋值为3，代入实际变量结束后，实际变量未改变
+    //window是全局对象
+    //同名变量与函数，函数是一等公民 JS是动态语言把a重新赋值，覆盖
+    //变量提升:在函数执行前先创建函数的EC 同时把函数声明的变量都已经初始化成了undenfined 
+    //调用d对象实例的run方法，这就是对象的方法调用模式
+    //在方法调用模式中，方法内部的this指向当前调用者的对象 d=this
+    //使用函数声明来创建一个函数
+    //function 函数名([value1,value2])可选形参{return}// 直接写return和没有返回值的函数，都会返回一个默认的undefined
+    //每创建一个函数就会创建一个新的函数作用域
+    //函数作用域提前 函数声明也提前但是使用函数表达式创建的函数,不会被声明提前,所以不能在声明调用前使用
+    //没有使用var定义关键字 则是全局  被声明但是不会赋值undefined
+    //使用var关键字声明的变量,会在所有的代码执行之前被声明
+    //定义形参相当于在作用域声明变量 var=
+    //全局作用域中创建的 变量作为window对象的属性保存 函数作为window对象的方法保存 
+    var noNameFun = function () { console.log("var声明变量 类型函数 跟其他变量一样使用 可以作为其他函数的参数使用 匿名函数中封装的代码"); }
+        (function () { console.log("匿名函数直接执行"); })(参数1, 参数2);
+    // 区别：  变量声明的函数（匿名函数）不能进行函数提升。
+    //函数提升是指:无论把具名函数声明在哪里,它都会跑到第一行没有var的函数按函数体执行上下文
+    //调用函数时解析器不会检查实参的类型,所以要注意是否有可能会接受非法的参数
+    //result + ' ' 可能把结果转化为字符串
+    //arguments是类数组 遇见return结束函数调用  每一个函数内部都可以直接访问arguments
+    //（他的属性0、1、2、3、4、5、6、属性值是传递参数的个数 函数的；length属性指的是形参个数 
+    // 执行t对象中的run方法。如果一个对象的属性是函数，我们就称为方法。
+    delete t.age; // 通过delete操作符 删除属性 删除t的自定义age属性。
+    // debugger t["age"];
+    // var person = {fullName: function (city, country) {}}
+    // var person1 = {}
+    // var m=person.fullName.call(person1, "Seattle", "USA");
+    // var m2=person.fullName.apply(person1, ["Seattle", "USA"]);
+    //     console.log(fun);
+    //  console.log(typeof fun);
+    //    function fun(){ console.log("我是匿名函数中封装的代码"); }
+
+    // var fun = new Function("console.log('hello我是的');");
+    // fun();//调用函数要加括号 函数的调用语句
+    //枚举对象属性名字
+    for (var k in t) {
+        // k相当于属性的名字的变量 k等于t变量属性名
+        // 第二次循环的时候，k 等于 t变量的第二个属性的名
+        // t[k] t.k 不可以，如果用点则k相当于一个变量，使用中括号k相当于一个字符串。
+    }
+    // 另外我们还可以使用for in的方式遍历数据。 也可以把继承自原型的属性也进行遍历。
+    //  for in 遍历对象，拿到的是对象的属性名，而不是属性值。
+    // for in 遍历数组，k值是数组的索引编号0 ,1 ,2，不是数组的元素值。
+    // toString() 方法可把一个 Number 对象转换为一个字符串，并返回结果
+    // 构造函数创建数组传递参数
+    var arr2 = new Array(4); // 创建一个空数组类型；var arr2 = new Array(); 给构造函数传递数值类型，数组容量
+    arr2[0] = "sssss";
+    // 创建数组的时候，顺便进行初始化数组的内容
+    var arr3 = new Array(1, 2, 3, "sssd", "malun", true, [22, 33]);
+    // 如果减小length值，就相当于截断了数组。
+    //当使用new来调用构造函数 
+    //1 创建一个空对象 2 空对象赋值给this this指向空对象 
+    // 3 执行构造函数里面的代码 并给this的属性作赋值初始化
+    // 4 把新对象返回简单类型 引用类型
+    //没有属性写入直接添加属性 读取一直原型上找 找不到undefined
+    var a1 = []; //创建空数组
+    // for in 循环会越过稀疏数组种的undefied空值。
+    // 1、 length和数组的元素的个数不一定相等  2、 数组不一定是连续的
+    // 3、 使用for in循环可以对稀疏数组的空值undefined进行过滤 两个逗号之间。
+    // 4、 不要稀疏数组！！！！
+    // 数组可以通过 push 和pop两个方法形成栈数据结构
+    //调用tostring方法转化为字符串也可以用数组索引 但包括,
+    // 通过in运算符 可以检测属性是否属于对象的自定义属性,返回的结果是true或者false
+    function Dog(dogName) {
+        //如果函数当做构造函数来用  第一步创建一个空对象（新对象）函数上下文、、this
+        //把空对象赋值给函数上下文 this=新属性this.name = dogName;
+        //函数当做构造函数调用 并没用返回任何数据，默认返回新对象this
+    }
+    //有返回值 返回值类型是简单类型那么会被忽略            
+    //返回值类型是引用类型（除去null）那么新对象会被忽略，把这个引用类型返回
+    //Array.prototype.sort可以根据字符串比较大小的算法对数组中的元素进行排序  
+    //把a转化为null类型 在堆上申请空间
+    //对象复用 对象如果不用设置为null(空对象)等待垃圾回收
+    //在循环中的函数表达式，能复用最好放到循环外面。
+    //尽量少定义全局变量
+    // t.pop();从数组t的末尾弹出一个元素。并返回弹出的数组元素。数组的长度-1
+    // t.push();压入一个元素。也可以是一个数组
+    // 用数组模拟队列数据结构 队列的特点就是先进先出。
+    // t.shift()出队一个元素
+    // sort方法是按照字符串进行比较大小规则计算排序的。
+    // 如果数组中的元素不是字符串类型会转成字符串后进行比较
+    // 自定义排序数字函数接收两个参数，字符串小的在前 相减参数正数 留下字符串小数值大往后比较 负值败家往前比   要求返回值为：负数， 0， 。如果返回负数留下大的数字比较，0为相等，正数则交换留下小数比较
+    // 定义一个变量，变量的类型的是function
+    // 利用函数式编程，sort方法可以接受一个比较大小的函数，进行小大排序
+    //由于匿名函数只用一次，没有必要创建一个变量。直接可以吧匿名函数的表达式传递到sort函数里去就行
+    // t.concat调用数组的链接方法,不会影响原来的数字，函数会返回一个新的拼接的数组。
+    // toString()方法会把数组转成字符，重写了原型的方法。 默认把数组中的元素都转成字符串然后用逗号分隔不同的元素。
+    //join方法也可以将数组转成字符串，默认跟toString一样
+    //t.join()发方法可以传一个参数，用来分隔数组中的元素
+    // slice：复制数组的一部分 传一个参数时候，是从参数的索引位置开始截取到数组的最后
+    // 传两个参数：从第一个参数作为索引位置开始，到第二个参数作为索引前面的那个元素结束，截取数组切片。
+    // 如果传递的是负数，那么从数组结尾开始计算。 但是不要用。
+    // slice方法只能往后截取，如果往前截取返回[];
+    // splice方法
+    //如果只传入一个参数，那么就从这个参数开始删除到数组的结尾 对原数组有影响
+    // 传递两个参数： 第一个参数是要删除的起始索引start 第二个参数：要删除元素的个数。
+    //两个以上的参数 第一个： start 第二个： 删除数据的个数 第三个及后面的参数都 要插入到start索引位置的元素
+    // 数组反序练习第一种方法： JavaScript 的arrary数组自带的反序方法；
+    // t.reverse(); console.log(t);
+    // 数组的数据进行排序
+    // 给定一个数组，请去掉数组中的重复数据
+    // t.indexOf(9); // -1   0  1    ie8 不支持。
+    // 遍历原数组中的所有元素，去掉第一个元素if(arr.indexOf(t[i]) == -1) {  //此方法不支持ie8！！！！arr.push(t[i]);}
+    // 遍历新数组，看当前t[i]是否在新数组中
+    // 哈希属性值：{}   重复的属性会进行覆盖
+    // 把数组红的元素赋值给str 把数组中的元素值设置给对象的属性，并给属性值赋值为数组的水元素
+    // 我们利用了：对象的属性不能重复，如果重复定义后面的会覆盖前面的定义
+    var t = "123456";
+    // 第一种方法：使用数字的reverse方法可以对数组进逆序。然后实现字符串逆序。
+    // 将字符串直接转换成了字符数组。
+    // var arr = t.split(''); arr => ['1','2','3'....]
+    // console.log(arr instanceof Array);
+    //字符数组还原成字符串arr.toString();将数组链接成以逗号分隔的字符串。
+    // var result = arr.join("");console.log(result);// join也是将数组链接成字符串，可以指定链接符号。这里是无链接符号
+    //第一种逆序的方法链 var m = t.split('').reverse()将字符数组进行逆序.join("")将数组进行连接字符串; console.log(m);
+    //第二种逆序的方法：从后往前遍历每个字符，然后用空字符串去累加。
+    var res = "";
+    for (var k = t.length - 1; k >= 0; k--) {
+        res += t[k];
+    }
+    console.log(res);
+    // 判断一个字符串中出现次数最多的字符，统计这个次数
+    var t = "abcdabkddabda";
+    // 遍历字符串中的每个字符，然后把字符当做对象的属性名，然后给对象添加属性。
+    // 添加属性前，先判断是否存在属性var charStr = t[i];charStr in h，h[charStr] += 1;
+    // 如果存在，那么就让属性的属性值+1.不存在那么属性值=1 var k in h max = h[k]; maxChar = k;
+    // 输入两个字符串，从第一个字符串中删除第二个字符串中的所有字符。不可以使用replace
+    // <!--例如：输入“They are students” 和“aeiou” 则删除之后的第一个字符串变成 “Thy r stdnts”-->
+    var str1 = "They are students",
+        str2 = "aeiou",
+        res = "";
+    // 思路： 判断一个字符在另外一个字符串中，使用indexOf(), 返回索引或者-1
+    // 遍历str1中的所有字符，然后判断是否在str2中，如果在就舍弃，不在就加到res中
+    for (var k = 0; k < str1.length; k++) {
+        // 不要用for in 去循环字符串中的字符。？
+        var c = str1[k];
+        if (str2.indexOf(c) < 0) {
+            res += c;
+        }
+    }
+    console.log(res);
+    //原型继承方法
+    // Cat.prototype.constructor===Cat
+    Cat.prototype = new Animal(); //父类构造函数执行一次//组合原型继承模式
+    Cat.prototype.constructor = Cat; //因为上面的代码把cat的prototype指向了animal
+    Animal.call(this, age, name); //this==c 借用父类构造函数给子类创建实例属性
+    var m1 = object(m); //不需要使用new构造函数就可以构造另外其他对象
+    //16四种调用案例19斐波那契数列递归太强了
+    // EC5 object.create();
+    function object(o) {
+        function F() {
+            F.prototype = o;
+            return new F();
+        } //原型式继承方法，传一个对象，内部新构造一个对象，新对象的原型指向o对象
+    }
+    function createPersion() {
+        var o = object(p);
+        o.say = function () {
+            console.log('hi');
+        }
+        return o;
+
+    }
+    // 利用函数式编程，sort方法可以接受一个比较大小的函数，例如数值比较大小的方法进行排序
+    //由于匿名函数只用一次，没有必要创建一个变量。直接可以把匿名函数的表达式传递到sort函数里去就行
+    // 0 === false{//// 即使if语句只有一行代码，也要写上花括号。 {}语句块的结尾不需要加分号 "不同不执行"
+    //!a即非为undefine和null转化为布尔值都为false
+    // var num = 9;
+    // switch (num) {
+    //     case 1: // 当num === 1的时候，执行冒号后面的语句。
+    //         console.log("星期一");
+    //         break; // 跳出当前的switch语句
+    //     default:
+    //         console.log("星期日");
+    // }
+    // var a = 7; 判断变量a的类型，使用typeof可以获取它的类型if(typeof (a) === "number")
+
+    // f.call(fContext, p1, p2...)f函数call（定义，参数。。。）；
+    // var t = {
+    //     name: 'lksdf',
+    //     sum: function (a, b) {
+    //         return a + b;
+    //     }
+    // };
+    //     // f.call(fContext,p1,p2...)f函数call（定义，参数。。。）；
+    //     var m = t.sum.call(t, 2, 3);
+    //如果传递第一个参数是简单类型（值类型和原始类型[5种]）那么
+        //number string boolean 转化成对应的包装类型3、、number
+        //null undefined    window
+        // 寄生继承模式传一个对象到一个方法（类似工厂方法）
+        // 方法内部根据传来的对象构建一个新对象 并对新对象进行扩展增强
+</script>
+
+</html>
